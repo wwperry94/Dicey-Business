@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
             this.value = value;
             this.addDice = document.createElement('div');
             diceContainer.appendChild(this.addDice);
-            this.addDice.style.backgroundColor = getRandomColor();
+            this.addDice.style.backgroundColor = "orange";
             this.addDice.style.height = "100px";
             this.addDice.style.width = "100px";
-            this.addDice.style.borderRadius = "20px";
+            this.addDice.style.borderRadius = "15px";
             this.addDice.style.borderColor = "black";
             this.addDice.style.margin = "15px";
-            this.addDice.style.color = "white";
+            this.addDice.style.color = "black";
             this.addDice.style.textAlign = "center";
             this.addDice.style.verticalAlign = "middle";
             this.addDice.style.lineHeight = "100px";
@@ -61,17 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return color;
     };
-                                                        // <EASTER EGG> \\
+    // <EASTER EGG> \\
     document.body.addEventListener('keyup', (e) => {
         let easterEgg = document.body;
+        let easterEgg1 = document.getElementById('rollbtn');
+        let easterEgg2 = document.getElementById('rerollbtn');
+        let easterEgg3 = document.getElementById('sumbtn');
         let timeStart = true;
         if (e.keyCode == 16) {
             if (timeStart === true) {
                 myInterval = setInterval(() => {
-                    // increments every 1000 milliseconds and posts to console
                     let seconds = 0;
                     seconds++;
                     easterEgg.style.backgroundColor = getRandomColor();
+                    easterEgg1.style.backgroundColor = getRandomColor();
+                    easterEgg2.style.backgroundColor = getRandomColor();
+                    easterEgg3.style.backgroundColor = getRandomColor();
                 }, 100)
             };
             timeStart = false

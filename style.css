@@ -21,6 +21,5 @@ body {
 #dice {
     display: flex;
     justify-content: center;
-    background-color: black;
-    border-color: white;
+    border-color: black;
 }
