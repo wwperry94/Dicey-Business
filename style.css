@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(18, 106, 128);
+    margin: 0px;
+}
+
+#btn-container {
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.buttons {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-family: cursive;
+    margin: 15px;
+}
+
+#dice {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-color: white;
+}
