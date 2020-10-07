@@ -7,19 +7,39 @@ document.addEventListener("DOMContentLoaded", function () {
         constructor(value) {
             this.value = value;
             this.addDice = document.createElement('div');
+            this.addDice.className = 'egg';
             diceContainer.appendChild(this.addDice);
-            this.addDice.style.backgroundColor = "orange";
+            this.addDice.style.backgroundColor = "black";
             this.addDice.style.height = "100px";
             this.addDice.style.width = "100px";
             this.addDice.style.borderRadius = "15px";
-            this.addDice.style.borderColor = "black";
             this.addDice.style.margin = "15px";
-            this.addDice.style.color = "black";
+            this.addDice.style.color = "white";
             this.addDice.style.textAlign = "center";
             this.addDice.style.verticalAlign = "middle";
             this.addDice.style.lineHeight = "100px";
-            this.addDice.style.fontSize = "50px";
-            this.addDice.textContent = this.value;
+            this.addDice.style.fontSize = "100px";
+            switch (this.value) {
+                case 1:
+                    this.addDice.textContent = '\u2680'
+                    break;
+                case 2:
+                    this.addDice.textContent = '\u2681'
+                    break;
+                case 3:
+                    this.addDice.textContent = '\u2682'
+                    break;
+                case 4:
+                    this.addDice.textContent = '\u2683'
+                    break;
+                case 5:
+                    this.addDice.textContent = '\u2684'
+                    break;
+                case 6:
+                    this.addDice.textContent = '\u2685'
+                    break;
+                default:
+            };
             idArray.push(this);
             this.addDice.addEventListener('click', () => {
                 this.rollDice();
@@ -52,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         alert(`The Sum of the Die is ${sumTotal}`)
     });
-
+//  <Extras>  \\
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -63,20 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     // <EASTER EGG> \\
     document.body.addEventListener('keyup', (e) => {
-        let easterEgg = document.body;
         let easterEgg1 = document.getElementById('rollbtn');
         let easterEgg2 = document.getElementById('rerollbtn');
         let easterEgg3 = document.getElementById('sumbtn');
+        let eggs = document.getElementsByClassName('egg');
         let timeStart = true;
         if (e.keyCode == 16) {
             if (timeStart === true) {
                 myInterval = setInterval(() => {
                     let seconds = 0;
                     seconds++;
-                    easterEgg.style.backgroundColor = getRandomColor();
                     easterEgg1.style.backgroundColor = getRandomColor();
                     easterEgg2.style.backgroundColor = getRandomColor();
                     easterEgg3.style.backgroundColor = getRandomColor();
+                    for (let i = 0; i < eggs.length; i++) {
+                        eggs.item(i).style.backgroundColor = getRandomColor();
+                    };
                 }, 100)
             };
             timeStart = false
