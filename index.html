@@ -9,16 +9,32 @@
 </head>
 
 <body>
+    <audio id="myAudio">
+        <source src="rollDice.mp3">
+    </audio>
+    <script>
+        var x = document.getElementById("myAudio");
+        function playAudio() {
+            x.play();
+        };
+        function pauseAudio() {
+            x.pause();
+        };
+    </script>
     <script src="script.js"></script>
     <div id="main-container">
         <div id="btn-container">
-            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif" alt="these are spinning dice">
-            <button class="buttons" id="rollbtn">Generate Dice</button>
-            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif" alt="these are spinning dice">
-            <button class="buttons" id="rerollbtn">Reroll Dice</button>
-            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif" alt="these are spinning dice">
+            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif"
+                alt="these are spinning dice">
+            <button class="buttons" id="rollbtn" onclick="playAudio()">Generate Dice</button>
+            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif"
+                alt="these are spinning dice">
+            <button class="buttons" id="rerollbtn" onclick="playAudio()">Reroll Dice</button>
+            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif"
+                alt="these are spinning dice">
             <button class="buttons" id="sumbtn">Get Sum</button>
-            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif" alt="these are spinning dice">
+            <img src="http://www.animatedimages.org/data/media/710/animated-dice-image-0020.gif"
+                alt="these are spinning dice">
         </div>
         <div class="die-container" id="dice"></div>
     </div>

@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         idArray.forEach(
             (die) => {
                 die.rollDice();
-                
+
             });
     });
     document.getElementById('sumbtn').addEventListener('click', () => {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         alert(`The Sum of the Die is ${sumTotal}`)
     });
-//  <Extras>  \\
+    //  <Extras>  \\
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -130,4 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.addEventListener('keydown', (e) => {
         clearInterval(myInterval);
     })
+
+
 });
