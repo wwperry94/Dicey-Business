@@ -51,7 +51,27 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         rollDice = () => {
             this.value = (Math.floor(Math.random() * 6) + 1);
-            this.addDice.textContent = this.value
+            switch (this.value) {
+                case 1:
+                    this.addDice.textContent = '\u2680'
+                    break;
+                case 2:
+                    this.addDice.textContent = '\u2681'
+                    break;
+                case 3:
+                    this.addDice.textContent = '\u2682'
+                    break;
+                case 4:
+                    this.addDice.textContent = '\u2683'
+                    break;
+                case 5:
+                    this.addDice.textContent = '\u2684'
+                    break;
+                case 6:
+                    this.addDice.textContent = '\u2685'
+                    break;
+                default:
+            };
         };
     };
     document.getElementById('rollbtn').addEventListener('click', () => {
@@ -61,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         idArray.forEach(
             (die) => {
                 die.rollDice();
+                
             });
     });
     document.getElementById('sumbtn').addEventListener('click', () => {
