@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         idArray.forEach(
             (die) => {
                 die.rollDice();
-
             });
     });
     document.getElementById('sumbtn').addEventListener('click', () => {
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var color = '#';
         for (var i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
-        }
+        };
         return color;
     };
     // <EASTER EGG> \\
@@ -124,12 +123,13 @@ document.addEventListener("DOMContentLoaded", function () {
             };
             timeStart = false
             console.log("the SEYcret == sweet?")
-            alert("the SEYcret == sweet?")
+            let showTime = document.getElementById("easterEgg");
+            showTime.play();
         };
     });
     document.body.addEventListener('keydown', (e) => {
+        let showTime = document.getElementById("easterEgg");
         clearInterval(myInterval);
-    })
-
-
+        showTime.pause();
+    });
 });
