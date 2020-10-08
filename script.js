@@ -102,34 +102,33 @@ document.addEventListener("DOMContentLoaded", function () {
         return color;
     };
     // <EASTER EGG> \\
-    document.body.addEventListener('keyup', (e) => {
+    let easterTime = document.getElementById("spinny");
+    let showTime = document.getElementById("easterEgg");
+    easterTime.addEventListener('dblclick', () => {
         let easterEgg1 = document.getElementById('rollbtn');
         let easterEgg2 = document.getElementById('rerollbtn');
         let easterEgg3 = document.getElementById('sumbtn');
         let eggs = document.getElementsByClassName('egg');
         let timeStart = true;
-        if (e.keyCode == 16) {
-            if (timeStart === true) {
-                myInterval = setInterval(() => {
-                    let seconds = 0;
-                    seconds++;
-                    easterEgg1.style.backgroundColor = getRandomColor();
-                    easterEgg2.style.backgroundColor = getRandomColor();
-                    easterEgg3.style.backgroundColor = getRandomColor();
-                    for (let i = 0; i < eggs.length; i++) {
-                        eggs.item(i).style.backgroundColor = getRandomColor();
-                    };
-                }, 100)
-            };
-            timeStart = false
-            console.log("the SEYcret == sweet?")
-            let showTime = document.getElementById("easterEgg");
-            showTime.play();
+        if (timeStart === true) {
+            myInterval = setInterval(() => {
+                let seconds = 0;
+                seconds++;
+                easterEgg1.style.backgroundColor = getRandomColor();
+                easterEgg2.style.backgroundColor = getRandomColor();
+                easterEgg3.style.backgroundColor = getRandomColor();
+                for (let i = 0; i < eggs.length; i++) {
+                    eggs.item(i).style.backgroundColor = getRandomColor();
+                };
+            }, 100)
         };
-    });
-    document.body.addEventListener('keydown', (e) => {
-        let showTime = document.getElementById("easterEgg");
-        clearInterval(myInterval);
-        showTime.pause();
+        timeStart = false
+        console.log("the SEYcret == sweet?")
+        showTime.play();
+        easterTime.addEventListener('click', () => {
+            let showTime = document.getElementById("easterEgg");
+            clearInterval(myInterval);
+            showTime.pause();
+        });
     });
 });
